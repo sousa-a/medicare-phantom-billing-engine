@@ -166,38 +166,6 @@ For context: CMS FY2025 Medicare FFS improper payments totaled [$28.83 billion](
 
 In a production SIU environment, the unified ranking would feed a case management system where investigators receive prioritized provider dossiers from all eight detection modules.
 
-## Repository Contents
-
-```
-medicare-phantom-billing-engine/
-├── README.md
-├── phantom_billing_detection.ipynb       # Detection notebook (54 cells, ~2,700 lines)
-├── generate_phantom_injection.py         # Standalone injection generator
-├── phantom_injection_manifest.csv        # Injection manifest for independent audit
-├── figures/                              # All visualizations (Figures 1–6)
-│   ├── fig1_p1_post_mortem.png
-│   ├── fig2_p2_impossible_days.png
-│   ├── fig3_p3_surge_analysis.png
-│   ├── fig4_p4_composite_scoring.png
-│   ├── fig5_top20_investigation_targets.png
-│   └── fig6_provider_deep_dive.png
-└── output/                               # All output CSVs
-    ├── provider_risk_scores.csv
-    ├── impossible_day_summaries.csv
-    └── surge_analysis.csv
-```
-
-## Requirements
-
-- **Python 3.10+**
-- **DuckDB** — analytical datalake backend
-- **pandas**, **numpy** — data manipulation
-- **scikit-learn** — Isolation Forest, MinMaxScaler
-- **matplotlib**, **seaborn** — visualization
-- **CMS DE-SynPUF** — all 20 samples, loaded into a DuckDB datalake
-
-**Hardware tested:** i5-8250U @ 1.60GHz × 4 cores, 20GB RAM. End-to-end runtime: under 15 minutes.
-
 ## Data Source
 
 [CMS 2008–2010 Data Entrepreneurs' Synthetic Public Use File (DE-SynPUF)](https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf)
